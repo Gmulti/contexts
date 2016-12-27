@@ -220,7 +220,7 @@ class JsonContext extends BaseContext
     /**
      * Checks, that given JSON nodes contains values
      *
-     * @Then the JSON nodes should contain:
+     * @Then the JSON nodes string should contain:
      */
     public function theJsonNodesStringShouldContain(PyStringNode $nodes)
     {
