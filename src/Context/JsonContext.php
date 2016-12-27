@@ -210,7 +210,19 @@ class JsonContext extends BaseContext
      *
      * @Then the JSON nodes should contain:
      */
-    public function theJsonNodesShouldContain(PyStringNode $nodes)
+    public function theJsonNodesShoudContain(TableNode $nodes)
+    {
+        foreach ($nodes->getRowsHash() as $node => $text) {
+            $this->theJsonNodeShouldContain($node, $text);
+        }
+    } 
+
+    /**
+     * Checks, that given JSON nodes contains values
+     *
+     * @Then the JSON nodes should contain:
+     */
+    public function theJsonNodesStringShouldContain(PyStringNode $nodes)
     {
         foreach ($nodes as $node => $text) {
             $this->theJsonNodeShouldContain($node, $text);
